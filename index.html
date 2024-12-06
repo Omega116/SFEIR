@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application météo interactive avec visualisation 3D">
+    <title>Météo Interactive 3D</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <span class="sfeir-logo">SFEIR</span>
+    </div>
+
+    <main id="main-content">
+        <div class="search-container" role="search">
+            <form id="search-form" onsubmit="handleSearch(event)">
+                <input 
+                    type="text" 
+                    id="search-input" 
+                    placeholder="Rechercher une ville..."
+                    aria-label="Rechercher une ville"
+                >
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                    <span>Rechercher</span>
+                </button>
+            </form>
+        </div>
+        
+        <div id="globe-container" role="region" aria-label="Globe terrestre interactif"></div>
+        
+        <div class="weather-panel" role="complementary" aria-label="Informations météorologiques">
+            <div class="panel-content">
+                <h2 id="location-name">Sélectionnez une ville</h2>
+                <div id="weather-info" class="weather-info">
+                    <div class="weather-item">
+                        <span class="label">
+                            <i class="fas fa-temperature-high"></i>
+                            Température
+                        </span>
+                        <span id="temperature">--</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">
+                            <i class="fas fa-cloud"></i>
+                            Météo
+                        </span>
+                        <span id="weather-description">--</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">
+                            <i class="fas fa-tint"></i>
+                            Humidité
+                        </span>
+                        <span id="humidity">--</span>
+                    </div>
+                    <div class="weather-item">
+                        <span class="label">
+                            <i class="fas fa-wind"></i>
+                            Vent
+                        </span>
+                        <span id="wind-speed">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
