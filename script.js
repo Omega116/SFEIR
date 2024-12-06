@@ -406,7 +406,7 @@ function createClickMarker(position) {
 
   const markerGeometry = new THREE.SphereGeometry(0.02, 16, 16);
   const markerMaterial = new THREE.MeshBasicMaterial({
-    color: #ffaa,
+    color: 0xffaa,
     opacity: 0.8,
     transparent: true,
   });
